@@ -1,0 +1,657 @@
+@import "./normalise.css";
+:root {
+  /*_____colors_____*/
+  --blue: #3685FB;
+  --blue-hover: #275fb4;
+  --white: #fff;
+  --dark-white: #F8F8F8;
+  --black: #000;
+  --dark-blue: #002248;
+  --light-blue: #00B3A0;
+  --paragrapgh: #697687;
+
+  /*______titles______*/
+  --h1: 58px;
+  --h2: 42px;
+  --h3: 20px;
+  --h4: 16px;
+
+  /*_____text_____*/
+  --p-big: 18px;
+  --p-reg: 16px;
+  --p-small: 14px;
+
+  /*______line-height______*/
+  --lh72: 72px;
+  --lh52: 52px;
+  --lh28: 28px;
+  --lh25: 25px;
+  --lh20: 20px;
+  --lh18: 18px;
+  --lh16: 16px;
+}
+
+@font-face {
+  font-family: "Airbnb";
+  src: url(../fonts/AirbnbCereal_W_Bk.woff);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Airbnb";
+  src: url(../fonts/AirbnbCereal_W_Md.woff);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Zodiak";
+  src: url(../fonts/Zodiak-Regular.woff);
+  font-weight: 400;
+}
+
+.page {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+}
+
+body {
+  font-family: "Airbnb";
+  font-weight: 400;
+  font-size: var(--p-reg);
+  line-height: 28px;
+}
+
+.container {
+  max-width: 1190px;
+  padding: 0 10px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.button {
+  background-color: var(--blue);
+  color: var(--white);
+  text-align: center;
+  font-size: var(--p-reg);
+  border-radius: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.button:hover,
+.button:focus {
+  background-color: var(--blue-hover);
+}
+
+.title {
+  font-family: "Zodiak";
+}
+
+/*________________header__________________*/
+
+.header {
+  background-color: var(--dark-white);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0;
+  font-size: var(--p-reg);
+  gap: 20px;
+}
+
+.nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 440px;
+}
+
+.buttonBox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.header__buttonBox {
+  max-width: 250px;
+}
+
+.header__button {
+  padding: 16px 30px;
+}
+
+.burger {
+  position: relative;
+  height: 35px;
+  width: 35px;
+  cursor: pointer;
+  display: none;
+}
+
+.green {
+  color: var(--light-blue);
+}
+
+/*________________enjoy_______________*/
+
+.enjoy {
+  background-color: var(--dark-white);
+  min-height: 100vh;
+  position: relative;
+}
+
+.enjoy__wrapper {
+  padding-top: 50px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 156px;
+}
+
+.enjoy__imgBox {
+  min-width: 45%;
+  position: relative;
+}
+
+.enjoy__img {
+  border: 10px solid var(--white);
+  border-radius: 570px;
+}
+
+.enjoy__img--big {
+  background-image: url(../img/enjoy/big.jpg);
+  background-repeat: no-repeat;
+  background-size: 150%;
+  background-position: top;
+  min-height: 540px;
+  max-width: 400px;
+}
+
+.enjoy__img--small {
+  position: absolute;
+  width: 320px;
+  min-height: 480px;
+  top: 30%;
+  right: 0;
+  background-image: url(../img/enjoy/small.jpg);
+  background-repeat: no-repeat;
+  background-size: 150%;
+  background-position: bottom;
+}
+
+.enjoy__content {
+  max-width: 550px;
+}
+
+.enjoy__title {
+  font-size: var(--h1);
+  line-height: var(--lh72);
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.enjoy__title::before {
+  content: "";
+  position: absolute;
+  background-image: url(../img/rocket.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  top: 53%;
+  right: -40px;
+}
+
+.enjoy__text {
+  line-height: var(--lh28);
+  color: var(--paragrapgh);
+  padding-bottom: 50px;
+}
+
+.enjoy__buttonBox {
+  max-width: 550px;
+}
+
+.enjoy__button {
+  padding: 20px 47px;
+  font-size: var(--p-reg);
+  line-height: var(--lh20);
+  font-weight: 700;
+}
+
+/*___________book____________*/
+
+.book {
+  position: absolute;
+  bottom: -84px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.book__wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 69%;
+  background: #fcfcfc;
+  box-shadow: 0px 40px 170px rgba(0, 34, 72, 0.07);
+  border-radius: 30px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.selection {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 43px 0;
+  width: 87%;
+}
+
+.selection__selector {
+  position: relative;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+  color: #002248;
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.selection__selector::after {
+  content: "";
+  background-image: url(../img/arrow-down.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 5px;
+  right: -20px;
+  cursor: pointer;
+}
+
+.selection__selected {
+  font-size: var(--p-reg);
+  line-height: var(--lh16);
+  color: #697687;
+}
+
+.book__button {
+  width: 23%;
+  background-color: var(--blue);
+  color: var(--white);
+  font-weight: 700;
+  font-size: var(--p-big);
+  line-height: var(--lh25);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-box {
+  padding-bottom: 15px;
+}
+
+/*________perfection___________*/
+
+.perfection__wrapper {
+  padding-top: 194px;
+  padding-bottom: 120px;
+}
+
+.perfection-content {
+  text-align: center;
+  max-width: 568px;
+  margin: 0 auto;
+  margin-bottom: 70px;
+}
+
+.perfection-content__title {
+  font-weight: 500;
+  font-size: var(--h2);
+  line-height: var(--lh52);
+  text-align: center;
+  text-transform: capitalize;
+  padding-bottom: 20px;
+}
+
+.perfection-content__text {
+  text-align: center;
+  color: #697687;
+}
+
+/*-----card-----*/
+
+.perfection-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1170px;
+}
+
+.card {
+  max-width: 370px;
+  min-height: 395px;
+  border: 2px solid var(--dark-white);
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 74px;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+  padding: 74px 54px 70px 58px;
+}
+
+.card__img {
+  margin-bottom: 50px;
+}
+
+.card__title {
+  font-weight: 500;
+  font-size: var(--h3);
+  line-height: var(--lh28);
+  text-align: center;
+  color: var(--dark-blue);
+  padding-bottom: 20px;
+}
+
+.card__text {
+  max-width: 236px;
+  font-weight: 400;
+  font-size: var(--p-reg);
+  line-height: var(--lh28);
+  text-align: center;
+  color: var(--paragrapgh);
+  margin: 0 auto;
+}
+
+/*____________contact__us_____________*/
+
+.contact {
+  margin-bottom: 100px;
+}
+
+.container--small {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact__wrapper {
+  background: #f3f8ff;
+  border-radius: 40px;
+  min-height: 378px;
+  background-image: url(../img/happy-woman-holding-her-baggage-plane-ticket.png);
+  background-repeat: no-repeat;
+  background-position: 90% 100%;
+  background-size: 40%;
+}
+
+.contact__content {
+  padding: 70px 0 70px 80px;
+  max-width: 484px;
+}
+
+.contact__title {
+  font-weight: 500;
+  font-size: 52px;
+  line-height: 60px;
+  text-transform: capitalize;
+  color: var(--dark-blue);
+  margin-bottom: 30px;
+}
+
+.contact__button {
+  padding: 20px 42px;
+}
+
+/*________footer________*/
+
+.footer__nav {
+  border-bottom: 1.5px solid rgba(105, 118, 135, 0.1);
+  margin-bottom: 30px;
+}
+
+.footer-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 145px;
+}
+
+.footer-list__item {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--paragrapgh);
+  border-radius: 50%;
+}
+
+.footer-list__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.copy {
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+/*______media______*/
+
+@media (max-width: 1181px) {
+  .enjoy__title::before {
+    content: "";
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .nav__list,
+  .header__buttonBox {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+}
+
+@media (max-width: 778px) {
+  .enjoy__wrapper {
+    justify-content: center;
+    text-align: center;
+    flex-direction: column-reverse;
+    margin-bottom: 80px;
+  }
+  .enjoy__buttonBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .book {
+    position: absolute;
+    bottom: 20%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 2;
+    display: none;
+  }
+  .book__wrapper {
+    flex-direction: column;
+  }
+  .book__button {
+    width: 100%;
+    padding: 40px 30px;
+  }
+  .book__selection {
+    width: 100%;
+    display: none;
+  }
+  .perfection__cards {
+    align-items: center;
+    justify-content: center;
+  }
+  .enjoy__imgBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 30px;
+  }
+  .enjoy__img--big {
+    background-image: url(../img/enjoy/big.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    max-height: 550px;
+    min-height: 480px;
+    width: 400px;
+  }
+  .enjoy__img--small {
+    position: static;
+    max-height: 550px;
+    width: 400px;
+    background-image: url(../img/enjoy/small.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+  }
+}
+
+@media (max-width: 476px) {
+  .contact__wrapper {
+    text-align: center;
+    background-position: 50% 100%;
+  }
+  .contact__buttonBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .contact__content {
+    min-height: 550px;
+    padding: 70px 80px 70px 80px;
+    max-width: 484px;
+  }
+  .contact__title {
+    font-size: var(--h2);
+  }
+}
+
+@media (max-width: 333px) {
+  .contact__wrapper {
+    background-image: none;
+  }
+  .contact__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 550px;
+    padding: 0;
+    max-width: 484px;
+  }
+  .enjoy__title {
+    font-size: var(--h2);
+  }
+}
+
+/*________________popup_______________*/
+
+.menu {
+  position: fixed;
+  z-index: 1000000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: var(--blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-100%);
+  transition: transform 0.8s ease-in-out;
+}
+
+.menu__list .list__link {
+  transition: color 0.3s ease;
+}
+
+.menu__list .list__link:hover,
+.menu__list .list__link:focus {
+  color: #245cac;
+}
+
+.closed-btn {
+  background-image: url(../img/xmark-solid.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.menu__list {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.menu__list .list__link {
+  color: #fcfcfc;
+  font-size: var(--h2);
+  line-height: 1.2;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.menu__buttonBox {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.menu__button {
+  background-color: var(--blue-hover);
+  padding: 20px 40px;
+  border: 3px solid var(--blue-hover);
+  text-transform: uppercase;
+}
+
+.menu__button:hover,
+.menu__button:focus {
+  background-color: var(--blue);
+}
+
+.active {
+  transform: translateY(0);
+}
+
+.body-active {
+  overflow: hidden;
+}
